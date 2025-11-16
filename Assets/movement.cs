@@ -10,9 +10,9 @@ public class movement : MonoBehaviour
     public Rigidbody rigid;
     private bool isGrounded;
 
-    [Header("Upright Settings")]
+    /*[Header("Upright Settings")]
     public float uprightStrength = 10f;
-    public float uprightDamping = 5f;
+    public float uprightDamping = 5f;*/
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class movement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
         KeepUpRight();
     }
@@ -67,12 +67,18 @@ public class movement : MonoBehaviour
 
         tiltAxis.Normalize();
 
+        tiltAxis = Vector3.ProjectOnPlane(tiltAxis, transform.up);
+        if (tiltAxis == Vector3.zero)
+        {
+            return;
+        }
+
         float strength = 500f;
         float damping = 50f;
 
         Vector3 correctiveTorque = tiltAxis * angle * strength - rigid.angularVelocity * damping;
 
-        if (!float.IsNaN(correctiveTorque.x) && !float.IsNaN(correctiveTorque.y) && !float.IsNaN(correctiveTorque.z))
+        if (!float.IsNaN(correctiveTorque.x))
         {
             rigid.AddTorque(correctiveTorque, ForceMode.Acceleration);
         }
@@ -85,9 +91,9 @@ public class movement : MonoBehaviour
             angle -= 360f;
         }
 
-        Vector3 torque = axis * (angle * Mathf.Deg2Rad * uprightStrength) - rigid.angularVelocity * uprightDamping;*/
+        Vector3 torque = axis * (angle * Mathf.Deg2Rad * uprightStrength) - rigid.angularVelocity * uprightDamping;
         //rigid.AddTorque(torque, ForceMode.Acceleration);
-    }
+    }*/
 
     void OnCollisionEnter(Collision collision)
     {
