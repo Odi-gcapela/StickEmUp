@@ -6,6 +6,7 @@ public class HeroMove : MonoBehaviour
 {
     public Rigidbody rb;
     public Vector3 InputKey;
+    float Myfloat;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,9 @@ public class HeroMove : MonoBehaviour
         rb.MovePosition((Vector3) transform.position + InputKey * 10 * Time.deltaTime);
 
         float Angle = Mathf.Atan2(InputKey.x, InputKey.z) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, Angle, 0);
+        float Smooth = Mathf.SmoothDampAngle(transform.eulerAngles.y, Angle, ref Myfloat, 0.1f);
+
+        transform.rotation = Quaternion.Euler(0, Smooth, 0);
     }
 }
 
