@@ -24,10 +24,13 @@ public class HeroMove : MonoBehaviour
     {
         rb.MovePosition((Vector3) transform.position + InputKey * 10 * Time.deltaTime);
 
-        float Angle = Mathf.Atan2(InputKey.x, InputKey.z) * Mathf.Rad2Deg;
-        float Smooth = Mathf.SmoothDampAngle(transform.eulerAngles.y, Angle, ref Myfloat, 0.1f);
+        if (InputKey.magnitude >= 0.1f)
+        {
+            float Angle = Mathf.Atan2(InputKey.x, InputKey.z) * Mathf.Rad2Deg;
+            float Smooth = Mathf.SmoothDampAngle(transform.eulerAngles.y, Angle, ref Myfloat, 0.1f);
 
-        transform.rotation = Quaternion.Euler(0, Smooth, 0);
+            transform.rotation = Quaternion.Euler(0, Smooth, 0);
+        }
     }
 }
 
