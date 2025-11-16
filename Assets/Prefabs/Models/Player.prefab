@@ -96,11 +96,7 @@ GameObject:
   - component: {fileID: 2446565742463967431}
   - component: {fileID: 2446565742463967430}
   - component: {fileID: 2446565742463967429}
-  - component: {fileID: 6712550966400813689}
-  - component: {fileID: 635081673981337607}
-  - component: {fileID: 1736831113177007345}
   m_Layer: 10
-  m_Layer: 0
   m_Name: ArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,11 +194,7 @@ GameObject:
   - component: {fileID: 2446565742639654435}
   - component: {fileID: 2446565742639654434}
   - component: {fileID: 2446565742639654433}
-  - component: {fileID: 4414868139059641975}
-  - component: {fileID: 4847708725391141443}
-  - component: {fileID: 3416510064465156555}
   m_Layer: 10
-  m_Layer: 0
   m_Name: LegR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,10 +292,7 @@ GameObject:
   - component: {fileID: 2446565743331860144}
   - component: {fileID: 2446565743331860159}
   - component: {fileID: 2446565743331860158}
-  - component: {fileID: 1373514673853559845}
-  - component: {fileID: 607363272}
   m_Layer: 10
-  m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,9 +390,8 @@ GameObject:
   - component: {fileID: 2446565744100034782}
   - component: {fileID: 9129246194089814812}
   - component: {fileID: 6202924048183348516}
-  m_Layer: 10
   - component: {fileID: 8335731319176459639}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,10 +459,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2446565744100034781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126dff25436d974438c0c8953a4903cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6dce52a3d875c448996d2c4c04115c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 6202924048183348516}
+  rb: {fileID: 0}
   InputKey: {x: 0, y: 0, z: 0}
 --- !u!1 &2446565744191529680
 GameObject:
@@ -488,11 +476,7 @@ GameObject:
   - component: {fileID: 2446565744191529684}
   - component: {fileID: 2446565744191529683}
   - component: {fileID: 2446565744191529682}
-  - component: {fileID: 588895284000480801}
-  - component: {fileID: 3415175501916952957}
-  - component: {fileID: 8395375424372505998}
   m_Layer: 10
-  m_Layer: 0
   m_Name: ArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,11 +574,7 @@ GameObject:
   - component: {fileID: 2446565744225240282}
   - component: {fileID: 2446565744225240281}
   - component: {fileID: 2446565744225240280}
-  - component: {fileID: 1674355896981255325}
-  - component: {fileID: 2446803444311264582}
-  - component: {fileID: 984646917817199071}
   m_Layer: 10
-  m_Layer: 0
   m_Name: LegL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,11 +672,7 @@ GameObject:
   - component: {fileID: 2446565744311518911}
   - component: {fileID: 2446565744311518910}
   - component: {fileID: 2446565744311518909}
-  - component: {fileID: 2975135592673376228}
-  - component: {fileID: 1236047624006973645}
-  - component: {fileID: 1213739421}
   m_Layer: 10
-  m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,12 +14,12 @@ public class MovingEnemy : MonoBehaviour
 
     private Rigidbody EnemyRigidbody;
     private Transform playerTarget;
+    private float attackDelay = 0f;
 
     [SerializeField]
     public float moveSpeed = 8f;
     public float attackRange = 2f;
     public float attackRate = 1.2f;
-    public float attackDelay = 0f;
 
     // Trigger functions for detection
     private void OnTriggerEnter(Collider other)
@@ -57,6 +57,7 @@ public class MovingEnemy : MonoBehaviour
             case EnemyState.Idle:
                 break;
             case EnemyState.Chase:
+                transform.LookAt(playerTarget.position);
                 ChasePlayer();
                 break;
             case EnemyState.Attack:
@@ -96,7 +97,7 @@ public class MovingEnemy : MonoBehaviour
 
         if (distance <= attackRange)
         {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            EnemyRigidbody.velocity = Vector3.zero;
             currentState = EnemyState.Attack;
         }
         else
@@ -104,8 +105,8 @@ public class MovingEnemy : MonoBehaviour
             Vector3 direction = (playerTarget.position - transform.position).normalized;
             direction.y = 0;
 
-            GetComponent<Rigidbody>().velocity = direction * moveSpeed;
-
+            EnemyRigidbody.velocity = direction * moveSpeed;
+            
             Quaternion lookingRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookingRotation, Time.deltaTime * 10f);
         }
@@ -122,11 +123,6 @@ public class MovingEnemy : MonoBehaviour
             currentState = EnemyState.Chase;
             return;
         }
-
-        Vector3 direction = (playerTarget.position - transform.position).normalized;
-        direction.y = 0;
-        Quaternion lookingRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookingRotation, Time.deltaTime * 10f);
 
         if (Time.time >= attackDelay)
         {
