@@ -12,18 +12,22 @@ public class MovingEnemy : MonoBehaviour
 
     public EnemyState currentState = EnemyState.Idle;
 
+    private Rigidbody EnemyRigidbody;
+    private Transform playerTarget;
+
     [SerializeField]
     public float moveSpeed = 8f;
     public float attackRange = 2f;
-    private Transform playerTarget;
-    private float attackRate = 1.2f;
-    private float attackDelay = 0f;
+    public float attackRate = 1.2f;
+    public float attackDelay = 0f;
 
     // Trigger functions for detection
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("COLLISION DETECTED! Switching to Chase state.", this);
+
             currentState = EnemyState.Chase;
             playerTarget = other.transform;
         }
@@ -33,9 +37,16 @@ public class MovingEnemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("COLLISION DETECTED! Switching to Idle state.", this);
             currentState = EnemyState.Idle;
             playerTarget = null;
         }
+    }
+
+    void Start()
+    {
+        EnemyRigidbody = GetComponent<Rigidbody>();
+        WhereIsPlayer();
     }
 
     // Update is called once per frame
@@ -54,6 +65,29 @@ public class MovingEnemy : MonoBehaviour
         }
     }
 
+    void WhereIsPlayer()
+    {
+        SphereCollider detectionSphere = GetComponent<SphereCollider>();
+
+        if (detectionSphere == null)
+        {
+            Debug.LogError("Goblin doesn't have proper sphere collider.");
+            return;
+        }
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionSphere.radius);
+
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Player"))
+            {
+                currentState = EnemyState.Chase;
+                playerTarget = hitCollider.transform;
+                return;
+            }
+        }
+    }
+
     void ChasePlayer()
     {
         if (playerTarget == null) return;
@@ -62,6 +96,7 @@ public class MovingEnemy : MonoBehaviour
 
         if (distance <= attackRange)
         {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
             currentState = EnemyState.Attack;
         }
         else
@@ -69,7 +104,7 @@ public class MovingEnemy : MonoBehaviour
             Vector3 direction = (playerTarget.position - transform.position).normalized;
             direction.y = 0;
 
-            transform.position = Vector3.MoveTowards(transform.position, playerTarget.position, moveSpeed * Time.deltaTime);
+            GetComponent<Rigidbody>().velocity = direction * moveSpeed;
 
             Quaternion lookingRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookingRotation, Time.deltaTime * 10f);

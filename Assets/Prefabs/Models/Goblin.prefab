@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 306852753521308256}
   - component: {fileID: 6434173144690627268}
   - component: {fileID: 4410161672202195096}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 4755683565473934332}
   - component: {fileID: 6474822917179555350}
   - component: {fileID: 7485404567987243904}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LegR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 4300401198208405248}
   - component: {fileID: 2166747161839582455}
   - component: {fileID: 1778095384749786126}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 8909530968952275359}
   - component: {fileID: 7243869351352508277}
   - component: {fileID: 5574193163473441259}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EarL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 6991880534120665912}
   - component: {fileID: 7856937257779558534}
   - component: {fileID: 4639007276127451501}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 5027787292972465737}
   - component: {fileID: 5433616184428560548}
   - component: {fileID: 7049095383069211234}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 7305788246590900021}
   - component: {fileID: 1765097726742587504}
   - component: {fileID: 3149752879403871778}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EarR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 7108004127856986884}
   - component: {fileID: 1545789038716935975}
   - component: {fileID: 1755360830480292288}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,9 +739,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1
-  m_Height: 2.9
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!135 &7108004127856986884
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -786,6 +786,8 @@ MonoBehaviour:
   currentState: 0
   moveSpeed: 8
   attackRange: 2
+  attackRate: 1.2
+  attackDelay: 0
 --- !u!1 &8677369216629031341
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +800,7 @@ GameObject:
   - component: {fileID: 4699190700806949033}
   - component: {fileID: 5617137812383349523}
   - component: {fileID: 3444892602614291777}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LegL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
