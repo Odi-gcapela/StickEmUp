@@ -278,7 +278,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &4646385061917284621
 MonoBehaviour:
@@ -292,10 +292,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f217051dbc396274da571555314ecd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
   moveSpeed: 3
-  attackRange: 2
-  attackRate: 1.2
+  attackRange: 4
+  rotationSpeed: 4
+  attackHitboxPrefab: {fileID: 209534415800682676, guid: e112051547c152c4c914c4dafc077d00, type: 3}
+  attackCooldown: 2
+  hitboxOffset: {x: 0, y: 0, z: 1.5}
 --- !u!1 &3623776348857907215
 GameObject:
   m_ObjectHideFlags: 0

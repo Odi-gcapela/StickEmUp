@@ -8,6 +8,10 @@ public class HeroMove : MonoBehaviour
     public Vector3 InputKey;
     float Myfloat;
 
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -27,4 +31,3 @@ public class HeroMove : MonoBehaviour
         }
     }
 }
-

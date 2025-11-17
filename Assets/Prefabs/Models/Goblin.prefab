@@ -786,6 +786,9 @@ MonoBehaviour:
   moveSpeed: 7
   attackRange: 3
   rotationSpeed: 4
+  attackHitboxPrefab: {fileID: 209534415800682676, guid: e112051547c152c4c914c4dafc077d00, type: 3}
+  attackCooldown: 2
+  hitboxOffset: {x: 0, y: 0, z: 1.5}
 --- !u!1 &8677369216629031341
 GameObject:
   m_ObjectHideFlags: 0
