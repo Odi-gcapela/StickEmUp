@@ -440,8 +440,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 25, y: -30, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &801337684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2417892155659590440, guid: b70e6822d691f8e4ba67af7cebf9d2ea, type: 3}
@@ -460,7 +458,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 4, z: 5}
   m_Center: {x: 0, y: -0.8, z: 0}
->>>>>>> 9be19d93b8f2507f945775ccc9e14b1b72a2f70e
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
