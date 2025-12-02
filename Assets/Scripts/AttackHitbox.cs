@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackHitbox : MonoBehaviour
 {
     [SerializeField]
-    public float damage = 5f;
+    public int damage = 5;
     PlayerHealth playerHealth;
     
     private void OnTriggerEnter(Collider other)
