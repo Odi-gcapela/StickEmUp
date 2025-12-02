@@ -6,17 +6,13 @@ public class AttackHitbox : MonoBehaviour
 {
     [SerializeField]
     public float damage = 5f;
+    PlayerHealth playerHealth;
     
-    void Start()
-    {
-        Destroy(gameObject, 0.2f); 
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            playerHealth = other.GetComponent<PlayerHealth>();
 
             if (playerHealth != null)
             {
@@ -31,4 +27,12 @@ public class AttackHitbox : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    /*public void FixedUpdate()
+    {
+        if (playerHealth == 0)
+        {
+            Destroy(gameObject);
+        }
+    }*/
 }
