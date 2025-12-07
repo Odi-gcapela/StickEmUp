@@ -1,0 +1,17 @@
+<<<<<<< HEAD:Assets/Prefabs/Dungeons/Dungeon_3.prefab.meta
+fileFormatVersion: 2
+guid: 190a7dcb999fe574dbb15d4717177235
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: 190a7dcb999fe574dbb15d4717177235
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> upstream/main:Dungeons/Dungeon_3.prefab.meta
